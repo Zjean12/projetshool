@@ -2,16 +2,23 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class AppColors {
-  static const Color primary = Color(0xFF505FDE);
-  static const Color secondary = Color(0xFF0789F8);
+import 'package:flutter/material.dart';
 
-  static const Color accent = Color(0xFF6F42C1);
-  static const Color warning = Color(0xFFFF6B35);
-  static const Color background = Colors.white;
-  static const Color textPrimary = Color(0xFF333333);
-  static const Color textSecondary = Color(0xFF666666);
-  static const Color cardBackground = Colors.white;
-  static const Color success = Color(0xFF28A745);
-  static const Color error = Colors.red;
+class AppColors {
+  // 🎨 Branding principal
+  static const Color primary = Color(0xFF584DB8);   // Violet moderne
+  static const Color secondary = Color(0xFFA29BFE); // Violet clair (accent / hover)
+
+  // ⚪ Neutres
+  static const Color background = Color(0xFFFFFFFF); // Fond blanc
+  static const Color lightGray = Color(0xFFF1F2F6); // Gris clair (champs, cartes)
+  static const Color gray = Color(0xFF636E72);       // Gris moyen (texte secondaire)
+  static const Color darkText = Color(0xFF2D3436);   // Gris foncé (texte principal)
+
+  // 💡 Feedback & actions
+  static const Color success = Color(0xFF00CEC9);    // Succès (turquoise doux, optionnel)
+  static const Color warning = Color(0xFFFDCB6E);    // Avertissement (jaune pastel)
+  static const Color danger = Color(0xFFD63031);     // Erreur / Urgence (rouge doux)
 }
+
+
