@@ -11,6 +11,6 @@ class onbording extends StatefulWidget {
 class _onbordingState extends State<onbording> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold();
+    return Scaffold();
   }
 }

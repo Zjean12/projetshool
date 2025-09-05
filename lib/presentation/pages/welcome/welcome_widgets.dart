@@ -98,7 +98,7 @@ class AnimatedLogo extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "PHARMA",
+                  "PHARMAd",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32,

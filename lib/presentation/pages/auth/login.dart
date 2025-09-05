@@ -423,7 +423,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
 
     // Simuler une connexion
     Future.delayed(const Duration(seconds: 2), () {
-      // Navigator.pushReplacementNamed(context, '/home');
+       Navigator.pushReplacementNamed(context, '/Home');
     });
   }
 

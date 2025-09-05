@@ -3,6 +3,7 @@ import 'package:pharma/presentation/pages/welcome/welcome_screen.dart';
 
 import 'auth/Register.dart';
 import 'auth/Login.dart';
+import 'home/Home.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,7 +14,7 @@ class AppRouter {
       case '/register':
         return SlideUpPageRoute(
           child: const Register(),
-          duration: const Duration(milliseconds: 400), // Plus rapide pour synchroniser
+          duration: const Duration(milliseconds: 400),
         );
 
       case '/login':
@@ -21,6 +22,11 @@ class AppRouter {
           child: const Login(),
           duration: const Duration(milliseconds: 400),
         );
+      case '/Home':
+      return SlideUpPageRoute(
+          child: const Home(),
+          duration: const Duration(milliseconds: 400),
+      );
 
       default:
         return MaterialPageRoute(
