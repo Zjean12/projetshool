@@ -4,6 +4,7 @@ import 'package:pharma/presentation/pages/welcome/welcome_screen.dart';
 import 'auth/Register.dart';
 import 'auth/Login.dart';
 import 'home/Home.dart';
+import 'home/map.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -12,21 +13,20 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const Bienvenu());
 
       case '/register':
-        return SlideUpPageRoute(
-          child: const Register(),
-          duration: const Duration(milliseconds: 400),
-        );
+        return MaterialPageRoute(builder: (_) => const Register());
 
       case '/login':
-        return SlideUpPageRoute(
-          child: const Login(),
-          duration: const Duration(milliseconds: 400),
-        );
+        return MaterialPageRoute(builder: (_) => const Login());
       case '/Home':
       return SlideUpPageRoute(
           child: const Home(),
           duration: const Duration(milliseconds: 400),
       );
+      case '/Map':
+        return SlideUpPageRoute(
+            child: const Map(),
+            duration: const Duration(microseconds: 400)
+        );
 
       default:
         return MaterialPageRoute(
@@ -47,7 +47,7 @@ class SlideUpPageRoute<T> extends PageRouteBuilder<T> {
 
   SlideUpPageRoute({
     required this.child,
-    this.duration = const Duration(milliseconds: 600),
+    this.duration = const Duration(milliseconds: 800),
   }) : super(
     pageBuilder: (context, animation, secondaryAnimation) => child,
     transitionDuration: duration,

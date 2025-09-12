@@ -98,9 +98,9 @@ class AnimatedLogo extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "PHARMAd",
+                  "PHARMA",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.darkText,
                     fontSize: 32,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1,
@@ -116,7 +116,7 @@ class AnimatedLogo extends StatelessWidget {
                 Text(
                   "GARDE",
                   style: TextStyle(
-                    color: AppColors.secondary,
+                    color: AppColors.primary,
                     fontSize: 32,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1,
@@ -158,7 +158,7 @@ class MainImage extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Image.asset(
-          "assets/images/undraw_medicine_hqqg-removebg-preview.png",
+          "assets/logo/Bien.png",
           fit: BoxFit.contain,
         ),
       ),
@@ -199,13 +199,14 @@ class AnimatedTextSection extends StatelessWidget {
             "Cette application vous permet de consulter les médicaments disponibles et de trouver un médecin en temps réel.",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: AppColors.primary,
+              color: AppColors.darkText,
               fontSize: 16,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.normal,
               height: 1.5,
               letterSpacing: 0.5,
             ),
           ),
+
         ),
       ),
     );
@@ -226,41 +227,23 @@ class AnimatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: fadeAnimation,
-      child: Transform.scale(
-        scale: scaleAnimation.value,
-        child: GestureDetector(
+    return GestureDetector(
           onTap: onTap,
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 40),
             padding: const EdgeInsets.symmetric(vertical: 18),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  AppColors.primary,
-                  AppColors.primary.withOpacity(0.8),
-                ],
-              ),
+              color: AppColors.primary,
               borderRadius: BorderRadius.circular(25),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.primary.withOpacity(0.3),
-                  blurRadius: 15,
-                  offset: const Offset(0, 8),
-                ),
-              ],
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                /*Icon(
                   Icons.arrow_forward_rounded,
                   color: Colors.white,
                   size: 24,
-                ),
+                ),*/
                 const SizedBox(width: 10),
                 const Text(
                   "COMMENCER",
@@ -274,8 +257,6 @@ class AnimatedButton extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
     );
   }
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:gif/gif.dart';
 import '../../../core/constants/app_colors.dart';
 import 'welcome_animations.dart';
 import 'welcome_widgets.dart';
@@ -42,24 +40,6 @@ class _BienvenuState extends State<Bienvenu> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  void _startTransition() {
-    setState(() {
-      _isAnimating = true;
-    });
-
-    _animations.mainController.forward().then((_) {
-      Navigator.pushNamed(context, '/register');
-
-      Future.delayed(const Duration(milliseconds: 100), () {
-        if (mounted) {
-          _animations.mainController.reset();
-          setState(() {
-            _isAnimating = false;
-          });
-        }
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,26 +53,7 @@ class _BienvenuState extends State<Bienvenu> with TickerProviderStateMixin {
           Column(
             children: [
               // Section principale avec logo
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      AppColors.primary,
-                      AppColors.primary.withOpacity(0.9),
-                      AppColors.primary.withOpacity(0.8),
-                    ],
-                  ),
-                  borderRadius: WelcomeConstants.containerBorderRadius,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.primary.withOpacity(0.3),
-                      blurRadius: 20,
-                      offset: const Offset(0, 10),
-                    ),
-                  ],
-                ),
+              SizedBox(
                 width: double.infinity,
                 height: 520,
                 child: Stack(
@@ -172,7 +133,9 @@ class _BienvenuState extends State<Bienvenu> with TickerProviderStateMixin {
                   return AnimatedButton(
                     scaleAnimation: _animations.buttonScaleAnimation,
                     fadeAnimation: _animations.buttonFadeAnimation,
-                    onTap: _startTransition,
+                    onTap: (){
+                      Navigator.pushNamed(context, '/register');
+                    },
                   );
                 },
               ),
@@ -222,7 +185,7 @@ class _BienvenuState extends State<Bienvenu> with TickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          "assets/logo/pharmacy.png",
+                          "assets/logo/medical.png",
                           width: 100,
                           height: 100,
                         ),
@@ -230,7 +193,7 @@ class _BienvenuState extends State<Bienvenu> with TickerProviderStateMixin {
                         Text(
                           "Préparation en cours...",
                           style: TextStyle(
-                            color: AppColors.primary,
+                            color: AppColors.darkText,
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 0.5,

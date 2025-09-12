@@ -73,12 +73,12 @@ class _RegisterState extends State<Register> with TickerProviderStateMixin {
       body: Stack(
         children: [
           // AppBar personnalisée avec logo
-          Positioned(
+          /*Positioned(
             top: 50,
             left: 0,
             right: 10,
             child: const AppbarPharma(logoSize: 30, textSize: 20),
-          ),
+          ),*/
 
           // Formulaire animé
           Positioned(

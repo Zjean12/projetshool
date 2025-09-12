@@ -75,12 +75,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
       body: Stack(
         children: [
           // AppBar personnalisée avec logo 3D
-          Positioned(
-            top: 50,
-            left: 0,
-            right: 10,
-            child: const AppbarPharma(logoSize: 30, textSize: 20),
-          ),
+
 
           // Formulaire avec animation de fade
           Positioned(
@@ -122,7 +117,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                               Padding(padding: EdgeInsets.only(right: 20),child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Container(
+                                  /*Container(
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                       color: AppColors.primary.withOpacity(0.1),
@@ -133,12 +128,12 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                       color: AppColors.primary,
                                       size: 25,
                                     ),
-                                  ),
+                                  ),*/
                                   const SizedBox(width: 15),
                                   Text(
                                     "CONNEXION",
                                     style: TextStyle(
-                                        color: AppColors.primary,
+                                        color: AppColors.darkText,
                                         fontSize: 25,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -185,7 +180,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                     _obscurePassword
                                         ? Icons.visibility_rounded
                                         : Icons.visibility_off_rounded,
-                                    color: AppColors.primary,
+                                    color: AppColors.darkText,
                                   ),
                                   onPressed: () {
                                     setState(() {
@@ -358,12 +353,12 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
           prefixIcon: Container(
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
+              color: AppColors.darkText.withOpacity(0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(
               icon,
-              color: AppColors.primary,
+              color: AppColors.darkText,
               size: 20,
             ),
           ),
@@ -371,7 +366,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
           hintText: hintText,
           labelText: labelText,
           labelStyle: TextStyle(
-            color: AppColors.primary,
+            color: AppColors.darkText,
             fontWeight: FontWeight.w500,
           ),
           hintStyle: TextStyle(

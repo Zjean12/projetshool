@@ -4,12 +4,16 @@ class EmergencyCard extends StatelessWidget {
   final VoidCallback? onTap;
   final double? width;
   final double? height;
+  final String? ImageTR;
+  final String? textTR;
 
   const EmergencyCard({
     super.key,
     this.onTap,
     this.width,
     this.height,
+    this.ImageTR,
+    this.textTR,
   });
 
   @override
@@ -17,8 +21,8 @@ class EmergencyCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width ?? 120,
-        height: height ?? 140,
+        width: width ?? 150,
+        height: height ?? 150,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -38,15 +42,13 @@ class EmergencyCard extends StatelessWidget {
             Container(
               width: 50,
               height: 50,
-              decoration: BoxDecoration(
+              /*decoration: BoxDecoration(
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(12),
-              ),
+              ),*/
               child: Center(
-                child: Icon(
-                  Icons.local_hospital_outlined,
-                  size: 28,
-                  color: Colors.grey.shade600,
+                child: Image.asset(
+                  ImageTR ?? 'assets/images/emergency.png',
                 ),
               ),
             ),
@@ -62,13 +64,13 @@ class EmergencyCard extends StatelessWidget {
                   bottomRight: Radius.circular(16),
                 ),
               ),*/
-              child: const Padding(
+              child:  Padding(
                 padding: EdgeInsets.symmetric(vertical: 12),
                 child: Text(
-                  'Emergency',
+                  textTR ?? "Emergency",
                   style: TextStyle(
 
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
                   textAlign: TextAlign.center,
